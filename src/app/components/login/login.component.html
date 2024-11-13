@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="login.component.scss">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Fundo</h1>
+        <h2>Sign in</h2>
+        <p>Use your Fundo Account</p>
+        <form>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email or phone*</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Password*</mat-label>
+                    <input matInput>
+                </mat-form-field>            
+            </div>
+            <div class="links">
+                <br>
+                <button mat-button color="primary">Forgot password</button>
+                <button mat-button color="primary">Create account</button>
+            </div>
+            <br>
+            <button mat-raised-button color="primary">Login</button>
+        </form>
+    </div>
+</body>
+</html>

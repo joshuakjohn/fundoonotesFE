@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    border: 1px solid;
+    border-radius: 8px;
+    width: 320px;
+    padding: 30px;
+    text-align: center;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+}
