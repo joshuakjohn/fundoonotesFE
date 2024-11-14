@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.Registration-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 650px;
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.Registration-container form {
+    font-size: small;
+}
+
+#username {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.Registration-container .content {
+    width: 55%;
+}
+
+.horizontal {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.image {
+    width: 40%;
+}
+
+.description {
+    margin-top: 4px;
+}
