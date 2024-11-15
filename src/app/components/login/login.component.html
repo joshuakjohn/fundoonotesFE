@@ -11,18 +11,18 @@
         <h1>Fundo</h1>
         <h2>Sign in</h2>
         <p>Use your Fundo Account</p>
-        <form [formGroup]="registerForm">
+        <form [formGroup]="signinForm">
             <div>
                 <mat-form-field appearance="outline">
-                    <mat-label>Email or phone</mat-label>
-                    <input matInput formControlName="email" [type]="showPass">
-                    <mat-error *ngIf='regFormControls["email"]["errors"]?.["required"]'>Email is required</mat-error>
-                    <mat-error *ngIf='regFormControls["email"]["errors"]?.["email"]'>Incorrect Email Format</mat-error>
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email">
+                    <mat-error *ngIf='signinFormControls["email"]["errors"]?.["required"]'>Email is required</mat-error>
+                    <mat-error *ngIf='signinFormControls["email"]["errors"]?.["email"]'>Incorrect Email Format</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label>Password</mat-label>
-                    <input matInput formControlName="password">
-                    <mat-error *ngIf='regFormControls["email"]["errors"]?.["required"]'>Password is required</mat-error>
+                    <input matInput type="password" formControlName="password">
+                    <mat-error *ngIf='signinFormControls["password"]["errors"]?.["required"]'>Password is required</mat-error>
                 </mat-form-field>            
             </div>
             <div class="links">

@@ -8,21 +8,20 @@ import { HttpService } from 'src/app/services/http-service/http.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  registerForm!: FormGroup;
+  signinForm!: FormGroup;
     submitted = false;
-    showPass = "text"
 
-    constructor(private formBuilder: FormBuilder, public httpService: HttpService) { }
+    constructor(private formBuilder: FormBuilder, private httpService: HttpService) { }
 
     ngOnInit() {
-        this.registerForm = this.formBuilder.group({
+        this.signinForm = this.formBuilder.group({
             email: ['', [Validators.required, Validators.email]],
-            password: ['', [Validators.required, Validators.minLength(6)]],
+            password: ['', Validators.required],
         });
     }
 
     // convenience getter for easy access to form fields
-    get regFormControls() { return this.registerForm.controls; }
+    get signinFormControls() { return this.signinForm.controls; }
     handleLogin(){
       
     }
