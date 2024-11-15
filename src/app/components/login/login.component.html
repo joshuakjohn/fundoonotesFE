@@ -11,15 +11,18 @@
         <h1>Fundo</h1>
         <h2>Sign in</h2>
         <p>Use your Fundo Account</p>
-        <form>
+        <form [formGroup]="registerForm">
             <div>
                 <mat-form-field appearance="outline">
-                    <mat-label>Email or phone*</mat-label>
-                    <input matInput>
+                    <mat-label>Email or phone</mat-label>
+                    <input matInput formControlName="email" [type]="showPass">
+                    <mat-error *ngIf='regFormControls["email"]["errors"]?.["required"]'>Email is required</mat-error>
+                    <mat-error *ngIf='regFormControls["email"]["errors"]?.["email"]'>Incorrect Email Format</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
-                    <mat-label>Password*</mat-label>
-                    <input matInput>
+                    <mat-label>Password</mat-label>
+                    <input matInput formControlName="password">
+                    <mat-error *ngIf='regFormControls["email"]["errors"]?.["required"]'>Password is required</mat-error>
                 </mat-form-field>            
             </div>
             <div class="links">
@@ -28,7 +31,7 @@
                 <button mat-button color="primary">Create account</button>
             </div>
             <br>
-            <button mat-raised-button color="primary">Login</button>
+            <button mat-raised-button color="primary" (click)="handleLogin()">Login</button>
         </form>
     </div>
 </body>
