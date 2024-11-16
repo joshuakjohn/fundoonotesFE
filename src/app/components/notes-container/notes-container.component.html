@@ -1,0 +1,4 @@
+<app-add-note class="addnote"></app-add-note>
+<div class='note'*ngFor="let note of notesList">
+    <app-note-card [noteDetails]="note"></app-note-card>
+</div>
