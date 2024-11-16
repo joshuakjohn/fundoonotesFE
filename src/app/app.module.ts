@@ -4,6 +4,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,13 +16,25 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NotesContainerComponent } from './components/notes-container/notes-container.component';
+import { ArchiveContainerComponent } from './components/archive-container/archive-container.component';
+import { TrashContainerComponent } from './components/trash-container/trash-container.component';
+import { NoteCardComponent } from './components/note-card/note-card.component';
+import { AddNoteComponent } from './components/add-note/add-note.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    DashboardComponent,
+    NotesContainerComponent,
+    ArchiveContainerComponent,
+    TrashContainerComponent,
+    NoteCardComponent,
+    AddNoteComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +45,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
