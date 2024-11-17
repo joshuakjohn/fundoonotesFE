@@ -13,7 +13,19 @@ export class NotesContainerComponent implements OnInit {
 
     this.notesList = ['hello', 'world', 'josh']
     //call the api to fetch the data
+    
 
+  }
+
+  handleUpdateList($event: any){
+    let {data, action} = $event
+    if(action === 'add'){
+      this.notesList.push(data)
+    }
+    else if(action === 'archive'){
+      this.notesList = this.notesList.filter((element) => element != data)
+    }
+    
   }
 
 
