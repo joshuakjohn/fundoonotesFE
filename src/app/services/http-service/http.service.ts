@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -8,8 +8,12 @@ export class HttpService {
 
   constructor(public http: HttpClient) { }
 
-  loginApiCall(endpoint: string, data: any){
-    return this.http.post('http://localhost:3000'+endpoint, data)
+  postApiCall<T>(endpoint: string, data: any, headers?: HttpHeaders){
+    return this.http.post<T>('http://localhost:3000'+endpoint, data, { headers })
+  }
+
+  getApiCall<T>(endpoint: string, headers: HttpHeaders){
+    return this.http.get('http://localhost:3000'+endpoint, { headers })
   }
 
   // async loginSignupCall(endpoint: string, data: any): Promise<any> {
