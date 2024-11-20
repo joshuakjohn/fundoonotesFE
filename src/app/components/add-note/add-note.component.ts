@@ -1,6 +1,8 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { HttpService } from 'src/app/services/http-service/http.service';
 import { REMINDER_ICON, COLLABRATOR_ICON, COLOR_PALATTE_ICON, IMG_ICON, ARCHIVE_ICON, MORE_ICON, DELETE_FOREVER_ICON, RESTORE_ICON, UNARCHIVE_ICON } from 'src/assets/svg-icons';
 
 @Component({
@@ -15,7 +17,7 @@ export class AddNoteComponent {
 
   @Output() updateList = new EventEmitter()
 
-  constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
+  constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer, private httpService: HttpService) {
     iconRegistry.addSvgIconLiteral('reminder-icon', sanitizer.bypassSecurityTrustHtml(REMINDER_ICON));
     iconRegistry.addSvgIconLiteral('collabrator-icon', sanitizer.bypassSecurityTrustHtml(COLLABRATOR_ICON));
     iconRegistry.addSvgIconLiteral('color-palatte-icon', sanitizer.bypassSecurityTrustHtml(COLOR_PALATTE_ICON));
@@ -28,9 +30,20 @@ export class AddNoteComponent {
   }
 
   addNoteToggle(action: string){
+    let title = this.title
+    let description = this.description
+    const header = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
+    let color = 'no color'
     this.addnote = !this.addnote
     if(action==='save'){
-      //add the apicall
+      this.httpService.postApiCall('/api/v1/notes', {title, description, color}, header).subscribe({
+        next: (res) => {
+          console.log(res)
+        },
+        error: (err) => {
+          console.log(err)
+        }
+      })
       console.log(this.title, this.description)
       this.updateList.emit({data: this.title, action: 'add'})
     }
