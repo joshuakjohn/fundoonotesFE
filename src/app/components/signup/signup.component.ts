@@ -31,7 +31,7 @@ export class SignupComponent {
   handleRegistration(){
     if(this.registerForm.valid){
       const { fname, lname, email, password } = this.registerForm.value
-      this.httpService.loginApiCall('/api/v1/users/signup', {fname, lname, email, password}).subscribe({
+      this.httpService.postApiCall('/api/v1/users/signup', {fname, lname, email, password}).subscribe({
         next: (res) => {
           console.log(res)
         },
