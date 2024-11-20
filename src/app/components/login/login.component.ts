@@ -26,9 +26,10 @@ export class LoginComponent {
     handleLogin(){
       if(this.signinForm.valid){
         const { email, password } = this.signinForm.value
-        this.httpService.loginApiCall('/api/v1/users/signin', {email, password}).subscribe({
+        this.httpService.postApiCall<login>('/api/v1/users', {email, password}).subscribe({
           next: (res) => {
             console.log(res)
+            localStorage.setItem("token", res.token)
             this.router.navigate(['/dashboard/notes'])
           },
           error: (err) => {
@@ -37,4 +38,9 @@ export class LoginComponent {
         })
       }
     }
+}
+
+interface login{
+  message: string;
+  token: string;
 }
