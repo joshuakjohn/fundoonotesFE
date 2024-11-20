@@ -18,12 +18,10 @@ export class NotesContainerComponent implements OnInit {
 
   ngOnInit() {
 
-    this.notesList = ['hello', 'world', 'josh']
     const header = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
-
     this.httpService.getApiCall('/api/v1/notes', header).subscribe({
-      next: (res) => {
-        console.log(res)
+      next: (res: any) => {
+        this.notesList = res.data.map((note: {title: string}) => note.title)
       },
       error: (err) => {
         console.log(err)
