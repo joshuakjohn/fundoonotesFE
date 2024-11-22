@@ -46,13 +46,14 @@ export class NotesContainerComponent implements OnInit {
 
   editNotesDialog(note: any){
     let dialogRef = this.dialog.open(UpdateNoteComponent, {
-      height: '400px',
+      height: 'auto',
       width: '600px',
-    });
+      data: note
+    }
+  );
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      // this.animal = result;
     });
   }
 
