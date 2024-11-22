@@ -2,7 +2,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http-service/http.service';
 import { MatDialog } from '@angular/material/dialog';
-import { UpdateNoteComponent } from 'src/app/update-note/update-note.component';
+import { UpdateNoteComponent } from 'src/app/components/update-note/update-note.component';
 
 
 @Component({

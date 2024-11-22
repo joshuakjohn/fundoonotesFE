@@ -21,7 +21,7 @@ import { ArchiveContainerComponent } from './components/archive-container/archiv
 import { TrashContainerComponent } from './components/trash-container/trash-container.component';
 import { NoteCardComponent } from './components/note-card/note-card.component';
 import { AddNoteComponent } from './components/add-note/add-note.component';
-import { UpdateNoteComponent } from './update-note/update-note.component';
+import { UpdateNoteComponent } from './components/update-note/update-note.component';
 
 
 @NgModule({

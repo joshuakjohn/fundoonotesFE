@@ -16,6 +16,10 @@ export class HttpService {
     return this.http.get('http://localhost:3000'+endpoint, { headers })
   }
 
+  putApiCall(endpoint: string, data: any, headers: HttpHeaders){
+    return this.http.put('http://localhost:3000'+endpoint, data, { headers })
+  }
+
   // async loginSignupCall(endpoint: string, data: any): Promise<any> {
   //   const headers = new HttpHeaders({
   //     'Content-Type': 'application/json',
