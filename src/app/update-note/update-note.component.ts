@@ -8,14 +8,16 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 })
 export class UpdateNoteComponent{
 
-  title:any = '';
+  title: any = '';
+  description: any = ''
 
   constructor(
     public dialogRef: MatDialogRef<UpdateNoteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     console.log(data)
-    this.title = data
+    this.title = data.title
+    this.description = data.description
   }
 
   onNoClick(): void {
