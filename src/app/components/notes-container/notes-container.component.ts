@@ -34,12 +34,12 @@ export class NotesContainerComponent implements OnInit {
   }
  
   handleUpdateList($event: any){
-    let {title, description, action} = $event
+    let {title, description, _id, action} = $event
     if(action === 'add'){
       this.notesList.push({title, description})
     }
-    else if(action === 'archive'){
-      this.notesList = this.notesList.filter((element) => element != title)
+    else if(action === 'trash'){
+      this.notesList = this.notesList.filter((element) => element._id != _id)
     }
     
   }

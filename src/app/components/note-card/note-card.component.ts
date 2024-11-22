@@ -35,6 +35,6 @@ export class NoteCardComponent {
   }
 
   handleNoteIconsClick(action: string){
-    this.updateList.emit({data: this.noteDetails, action})
+    this.updateList.emit({...this.noteDetails, action})
   }
 }
