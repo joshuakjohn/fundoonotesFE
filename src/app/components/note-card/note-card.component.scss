@@ -10,6 +10,10 @@
 }
 
 .buttons{
+    display: none;
+}
+
+.notecard:hover .buttons{
     display: flex;
     justify-content: center;
 }
