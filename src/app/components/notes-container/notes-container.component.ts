@@ -1,6 +1,8 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http-service/http.service';
+import { MatDialog } from '@angular/material/dialog';
+import { UpdateNoteComponent } from 'src/app/update-note/update-note.component';
 
 
 @Component({
@@ -12,7 +14,7 @@ export class NotesContainerComponent implements OnInit {
 
   notesList: any[] = []
 
-  constructor(private httpService: HttpService){
+  constructor(private httpService: HttpService, public dialog: MatDialog){
 
   }
 
@@ -40,6 +42,18 @@ export class NotesContainerComponent implements OnInit {
       this.notesList = this.notesList.filter((element) => element != data)
     }
     
+  }
+
+  editNotesDialog(note: any){
+    let dialogRef = this.dialog.open(UpdateNoteComponent, {
+      height: '400px',
+      width: '600px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // this.animal = result;
+    });
   }
 
 
