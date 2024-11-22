@@ -1,5 +1,6 @@
 <div class="notecard">
-    <span>{{noteDetails}}</span>
+    <span style="font-weight: 500;">{{noteDetails.title}}</span>
+    <span>{{noteDetails.description}}</span>
     <div class="buttons">
         <button mat-icon-button aria-label="reminder button" matTooltip="Reminder" (click)="handleNoteIconsClick('archive')">
             <mat-icon svgIcon="trash-icon" aria-hidden="false" aria-label="reminder icon"></mat-icon>

@@ -1,3 +1,4 @@
+import { NotExpr } from '@angular/compiler';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -10,7 +11,7 @@ import { REMINDER_ICON, COLLABRATOR_ICON, COLOR_PALATTE_ICON, IMG_ICON, ARCHIVE_
 })
 export class NoteCardComponent {
 
-  @Input() noteDetails:string = ''
+  @Input() noteDetails:any = ''
 
   @Output() updateList = new EventEmitter
 
@@ -25,6 +26,12 @@ export class NoteCardComponent {
     iconRegistry.addSvgIconLiteral('delete-forever-icon', sanitizer.bypassSecurityTrustHtml(DELETE_FOREVER_ICON));
     iconRegistry.addSvgIconLiteral('restore-icon', sanitizer.bypassSecurityTrustHtml(RESTORE_ICON));
     iconRegistry.addSvgIconLiteral('unarchive-icon', sanitizer.bypassSecurityTrustHtml(UNARCHIVE_ICON));
+  }
+
+  ngOnInit(){
+
+    console.log(this.noteDetails)
+
   }
 
   handleNoteIconsClick(action: string){

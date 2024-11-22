@@ -45,7 +45,7 @@ export class AddNoteComponent {
         }
       })
       console.log(this.title, this.description)
-      this.updateList.emit({data: this.title, action: 'add'})
+      this.updateList.emit({title: this.title, description:this.description, action: 'add'})
     }
 
   }
