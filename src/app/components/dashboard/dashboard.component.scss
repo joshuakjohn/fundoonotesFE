@@ -1,4 +1,61 @@
+.header{
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 65px;
+  border-bottom: 1px solid #c1c1c1;
+}
 .example-container {
     width: 100%;
-    height: calc(100vh - 48px);
+    height: calc(100vh - 65.8px);
   }
+
+.search{
+  width: 500px;
+  height: 50px;
+  margin-left: 75px;
+  padding: 0px 10px;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  outline: none;
+}
+
+.menu{
+  margin: 10px;
+}
+
+.search:focus{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.drawer{
+  width: 250px;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid transparent;
+}
+
+mat-button-toggle{
+  border-radius: 0px 25px 25px 0px;
+  padding: 3px;
+}
+
+.toggle{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 242px;
+}
+
+.toggle span{
+  padding: 0px 20px;
+}
+
+.toggle svg{
+  padding: 0 10px;
+}
