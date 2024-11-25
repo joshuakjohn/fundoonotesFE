@@ -15,7 +15,7 @@
         <div class="edit-buttons">
             <button class="btn">↩️</button>
             <button class="btn">↪️</button>
-            <button class="btn close-btn" (click)="onNoClick()">Close</button>
+            <button class="btn close-btn" (click)="onNoClick()" [mat-dialog-close]="title">Close</button>
         </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
-<div class="notecard">
-    <span style="font-weight: 500;">{{noteDetails.title}}</span>
-    <span>{{noteDetails.description}}</span>
+<div class="notecard" (click)="editNotesDialog(noteDetails)">
+    <span class="text" style="font-weight: 500;">{{noteDetails.title}}</span>
+    <span class="text" >{{noteDetails.description}}</span>
     <div class="buttons">
         <button mat-icon-button aria-label="trash button" matTooltip="Trash" (click)="handleNoteIconsClick('trash')">
             <mat-icon svgIcon="trash-icon" aria-hidden="false" aria-label="trash icon"></mat-icon>

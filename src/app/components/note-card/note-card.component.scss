@@ -1,23 +1,29 @@
 .notecard{
+    position: relative;
     display: flex;
     flex-direction: column;
     // justify-content: space-between;
-    height: 120px;
+    height: auto;
     width: 200px;
     border: solid #ccc;
     border-radius: 5px;
 }
 
 .buttons{
-    display: none;
+    // position: absolute;
+    // top: 80px;
+    visibility: hidden;
 }
 
 .notecard:hover .buttons{
-    display: flex;
-    justify-content: center;
+    visibility: visible;
 }
 
 span{
     text-align: center;
     margin: 10px;
+}
+
+.text{
+    word-wrap: break-word;
 }
