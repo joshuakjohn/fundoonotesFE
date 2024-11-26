@@ -36,7 +36,7 @@ export class AddNoteComponent {
     const header = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
     let color = 'no color'
     this.addnote = !this.addnote
-    if(action==='save'){
+    if(action==='save' && (title && description)){
       this.httpService.postApiCall('/api/v1/notes', {title, description, color}, header).subscribe({
         next: (res: any) => {
           _id = res.data._id
@@ -49,6 +49,8 @@ export class AddNoteComponent {
       console.log(this.title, this.description)
       this.updateList.emit({title: this.title, description:this.description, _id:_id, action: 'add'})
     }
+    this.title = ''
+    this.description = ''
 
   }
 
