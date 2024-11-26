@@ -1,0 +1,15 @@
+.note{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 16px;
+}
+
+.notecard{
+    display: flex;
+    justify-content: center;
+}
+
+.notescontainer{
+    margin: 40px 200px;
+}

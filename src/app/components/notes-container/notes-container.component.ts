@@ -21,7 +21,8 @@ export class NotesContainerComponent implements OnInit {
     const header = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
     this.httpService.getApiCall('/api/v1/notes', header).subscribe({
       next: (res: any) => {
-        this.notesList = res.data.map((note: {title: string, description:string, _id:string}) => ({title:note.title, description:note.description, _id:note._id}))
+        //this.notesList = res.data.map((note: {title: string, description:string, _id:string}) => ({title:note.title, description:note.description, _id:note._id}))
+        this.notesList = res.data.filter((note: any) => note.isArchive === false && note.isTrash === false)
       },
       error: (err) => {
         console.log(err)

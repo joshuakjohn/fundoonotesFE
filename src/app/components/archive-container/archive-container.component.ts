@@ -18,9 +18,7 @@ export class ArchiveContainerComponent {
     const header = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
     this.httpService.getApiCall('/api/v1/notes', header).subscribe({
       next: (res: any) => {
-        let list = res.data.map((note: {title: string, description:string, _id:string , isArchive:boolean, isTrash:boolean}) => ({title:note.title, description:note.description, _id:note._id, isArchive: note.isArchive}))
-        this.archiveList = list.filter((note: any) => note.isArchive === true)
-        console.log(this.archiveList)
+        this.archiveList = res.data.filter((note: any) => note.isArchive === true)
       },
       error: (err) => {
         console.log(err)
