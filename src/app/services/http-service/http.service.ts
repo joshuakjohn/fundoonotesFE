@@ -20,17 +20,7 @@ export class HttpService {
     return this.http.put('http://localhost:3000'+endpoint, data, { headers })
   }
 
-  // async loginSignupCall(endpoint: string, data: any): Promise<any> {
-  //   const headers = new HttpHeaders({
-  //     'Content-Type': 'application/json',
-  //   });
-
-  //   try {
-  //     const res = await this.http.post(this.baseUrl + endpoint, data, { headers }).toPromise()
-  //     return res
-  //   } catch (error) {
-  //     return error
-  //   }
-
-  // }
+  deleteApiCall(endpoint: string, headers: HttpHeaders){
+    return this.http.delete('http://localhost:3000'+endpoint, { headers })
+  }
 }
