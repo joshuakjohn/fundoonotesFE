@@ -1,5 +1,7 @@
-<div class="notecard" (click)="editNotesDialog(noteDetails)">
-    <span class="text" style="font-weight: 500;">{{noteDetails.title}}</span>
-    <span class="text" >{{noteDetails.description}}</span>
+<div class="notecard">
+    <div class="content" (click)="editNotesDialog(noteDetails)">
+        <span class="text" style="font-weight: 500;">{{noteDetails.title}}</span>
+        <span class="text" >{{noteDetails.description}}</span>
+    </div>
     <app-icons class="buttons" [id]="noteDetails._id"></app-icons>
 </div>
