@@ -2,12 +2,13 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
     height: auto;
     width: 230px;
     border: solid #ccc;
     border-radius: 5px;
     align-items: center;
+    padding: 10px 10px 5px 10px;
+
 }
 
 .buttons{
@@ -20,9 +21,10 @@
 
 .notecard span{
     align-self: flex-start;
-    margin: 10px;
 }
 
-.text{
-    word-wrap: break-word;
+span.text {
+    word-wrap: break-word; /* Break long words if necessary */
+    width: 100%;
+    margin-bottom: 10px;
 }

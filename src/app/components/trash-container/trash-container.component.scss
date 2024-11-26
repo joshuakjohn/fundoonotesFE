@@ -1,6 +1,6 @@
 .note{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(241px, 1fr));
     gap: 16px;
     padding: 16px;
 }
@@ -11,5 +11,5 @@
 }
 
 .notescontainer{
-    margin: 40px 140px;
+    margin: 40px 80px;
 }
