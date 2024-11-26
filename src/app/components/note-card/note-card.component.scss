@@ -7,11 +7,10 @@
     width: 230px;
     border: solid #ccc;
     border-radius: 5px;
+    align-items: center;
 }
 
 .buttons{
-    // position: absolute;
-    // top: 80px;
     visibility: hidden;
 }
 
@@ -19,8 +18,8 @@
     visibility: visible;
 }
 
-span{
-    text-align: center;
+.notecard span{
+    align-self: flex-start;
     margin: 10px;
 }
 

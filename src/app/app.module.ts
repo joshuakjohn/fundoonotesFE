@@ -8,6 +8,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +24,7 @@ import { TrashContainerComponent } from './components/trash-container/trash-cont
 import { NoteCardComponent } from './components/note-card/note-card.component';
 import { AddNoteComponent } from './components/add-note/add-note.component';
 import { UpdateNoteComponent } from './components/update-note/update-note.component';
+import { IconsComponent } from './components/icons/icons.component';
 
 
 @NgModule({
@@ -35,7 +38,8 @@ import { UpdateNoteComponent } from './components/update-note/update-note.compon
     TrashContainerComponent,
     NoteCardComponent,
     AddNoteComponent,
-    UpdateNoteComponent
+    UpdateNoteComponent,
+    IconsComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,8 @@ import { UpdateNoteComponent } from './components/update-note/update-note.compon
     MatSidenavModule,
     MatIconModule,
     MatDialogModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
