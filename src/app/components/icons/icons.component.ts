@@ -28,11 +28,9 @@ export class IconsComponent {
   }
 
   trashNote(action: string){
-    console.log(this.id)
     const header = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
     this.httpService.deleteApiCall(`/api/v1/notes/${this.id}/trash`, header).subscribe({
       next: (res: any) => {
-        console.log(res)
         this.updateList.emit({_id: this.id, action})
       },
       error: (err) => {
