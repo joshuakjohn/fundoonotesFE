@@ -11,7 +11,7 @@
     <button mat-icon-button aria-label="img button" matTooltip="Add Image" class="small-icon-button">
         <mat-icon svgIcon="img-icon" aria-hidden="false" aria-label="add image icon"></mat-icon>
     </button>
-    <button mat-icon-button aria-label="img button" matTooltip="Add Image" class="small-icon-button">
+    <button mat-icon-button aria-label="archive button" matTooltip="Archive" class="small-icon-button" (click)="archiveNote('archive')">
         <mat-icon svgIcon="archive-icon" aria-hidden="false" aria-label="add image icon"></mat-icon>
     </button>
     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="small-icon-button" id="menu" (click)="$event.stopPropagation()"> 

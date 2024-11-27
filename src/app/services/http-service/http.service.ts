@@ -23,4 +23,8 @@ export class HttpService {
   deleteApiCall(endpoint: string, headers: HttpHeaders){
     return this.http.delete('http://localhost:3000'+endpoint, { headers })
   }
+
+  patchApiCall(endpoint: string, data:any, headers: HttpHeaders){
+    return this.http.patch('http://localhost:3000'+endpoint, data, { headers })
+  }
 }

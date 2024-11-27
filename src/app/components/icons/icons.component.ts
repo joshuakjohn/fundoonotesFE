@@ -38,4 +38,16 @@ export class IconsComponent {
       }
     })
   }
+
+  archiveNote(action: string){
+    const header = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
+    this.httpService.patchApiCall(`/api/v1/notes/${this.id}`,"", header).subscribe({
+      next: (res: any) => {
+        this.updateList.emit({_id: this.id, action})
+      },
+      error: (err) => {
+        console.log(err)
+      }
+    })
+  }
 }
