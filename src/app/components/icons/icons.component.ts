@@ -1,5 +1,5 @@
 import { HttpHeaders } from '@angular/common/http';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpService } from 'src/app/services/http-service/http.service';
@@ -14,6 +14,8 @@ export class IconsComponent {
 
   @Input() id: string = ''
 
+  @Output() updateList = new EventEmitter
+
   constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer, public httpService: HttpService){
     iconRegistry.addSvgIconLiteral('trash-icon', sanitizer.bypassSecurityTrustHtml(TRASH_ICON));
     iconRegistry.addSvgIconLiteral('color-palatte-icon', sanitizer.bypassSecurityTrustHtml(COLOR_PALATTE_ICON));
@@ -25,17 +27,17 @@ export class IconsComponent {
     iconRegistry.addSvgIconLiteral('unarchive-icon', sanitizer.bypassSecurityTrustHtml(UNARCHIVE_ICON));
   }
 
-  trashNote(){
+  trashNote(action: string){
     console.log(this.id)
     const header = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
     this.httpService.deleteApiCall(`/api/v1/notes/${this.id}/trash`, header).subscribe({
       next: (res: any) => {
         console.log(res)
+        this.updateList.emit({_id: this.id, action})
       },
       error: (err) => {
         console.log(err)
       }
     })
   }
-
 }

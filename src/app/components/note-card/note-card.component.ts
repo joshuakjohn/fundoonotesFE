@@ -34,8 +34,8 @@ export class NoteCardComponent {
   ngOnInit(){
   }
 
-  handleNoteIconsClick(action: string){
-    this.updateList.emit({...this.noteDetails, action})
+  handleNoteIconsClick($event: any){
+    this.updateList.emit({_id: $event._id, action: $event.action})
   }
 
   editNotesDialog(note: any){
