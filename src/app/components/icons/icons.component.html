@@ -5,7 +5,7 @@
     <button mat-icon-button aria-label="collabrator button" matTooltip="Collabrator" class="small-icon-button">
         <mat-icon svgIcon="collabrator-icon" aria-hidden="false" aria-label="collabrator icon"></mat-icon>
     </button>
-    <button mat-icon-button aria-label="color button" matTooltip="Background Color Options" class="small-icon-button">
+    <button mat-icon-button [matMenuTriggerFor]="color_menu" aria-label="color button" matTooltip="Background Color Options" class="small-icon-button">
         <mat-icon svgIcon="color-palatte-icon" aria-hidden="false" aria-label="color button icon"></mat-icon>
     </button>
     <button mat-icon-button aria-label="img button" matTooltip="Add Image" class="small-icon-button">
@@ -14,10 +14,10 @@
     <button mat-icon-button aria-label="archive button" matTooltip="Archive" class="small-icon-button" (click)="archiveNote('archive')">
         <mat-icon svgIcon="archive-icon" aria-hidden="false" aria-label="add image icon"></mat-icon>
     </button>
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="small-icon-button" id="menu" (click)="$event.stopPropagation()"> 
+    <button mat-icon-button [matMenuTriggerFor]="more_menu" aria-label="Example icon-button with a menu" class="small-icon-button" id="menu"> 
         <mat-icon svgIcon="more-icon" aria-hidden="false" aria-label="add image icon"></mat-icon>
       </button>
-      <mat-menu #menu="matMenu" xPosition="after">
+      <mat-menu #more_menu="matMenu" xPosition="after">
         <button mat-menu-item>
           <mat-icon>dialpad</mat-icon>
           <span>Redial</span>
@@ -30,5 +30,13 @@
           <mat-icon>notifications_off</mat-icon>
           <span>Disable alerts</span>
         </button>
+      </mat-menu>
+
+      <mat-menu #color_menu="matMenu" yPosition="below" xPosition="after" class="custommenu">
+        <div class="colormenu">
+          <div *ngFor="let color of colorArray">
+            <button class="colorbutton" [style.background-color]="color.code"></button>
+          </div>
+        </div>
       </mat-menu>
 </div>

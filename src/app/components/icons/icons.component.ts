@@ -12,6 +12,20 @@ import { COLLABRATOR_ICON, COLOR_PALATTE_ICON, IMG_ICON, ARCHIVE_ICON, MORE_ICON
 })
 export class IconsComponent {
 
+  colorArray: Array<any> = [
+    { code: '#faafa8', name: 'Tomato' },
+    { code: '#f39f76', name: 'OrangeRed'},
+    { code: '#fff8b8', name: 'yellow' },
+    { code: '#e2f6d3', name: 'greenyellow' },
+    { code: '#b4ddd3', name: 'LightSteelBlue' },
+    { code: '#d4e4ed', name: 'PaleGoldenRod' },
+    { code: '#aeccdc', name: 'Aquamarine' },
+    { code: '#d3bfdb', name: 'Bisque' },
+    { code: '#f6e2dd', name: 'Silver' },
+    { code: '#e9e3d4', name: 'RosyBrown' },
+    { code: '#efeff1', name: 'grey' },
+  ];
+
   @Input() id: string = ''
 
   @Output() updateList = new EventEmitter
