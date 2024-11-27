@@ -25,6 +25,13 @@ export class ArchiveContainerComponent {
       }
     })
     
-
   }
+
+  handleUpdateList($event: any){
+    let {_id, action} = $event
+    if(action === 'archive'){
+      this.archiveList = this.archiveList.filter((element) => element._id != _id)
+    }
+  }
+
 }
