@@ -35,7 +35,7 @@
       <mat-menu #color_menu="matMenu" yPosition="below" xPosition="after" class="custommenu">
         <div class="colormenu">
           <div *ngFor="let color of colorArray">
-            <button class="colorbutton" [style.background-color]="color.code"></button>
+            <button class="colorbutton" [style.background-color]="color.code" (click)="handleNoteColor(color.code)"></button>
           </div>
         </div>
       </mat-menu>

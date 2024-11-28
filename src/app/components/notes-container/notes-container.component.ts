@@ -21,7 +21,6 @@ export class NotesContainerComponent implements OnInit {
     const header = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
     this.httpService.getApiCall('/api/v1/notes', header).subscribe({
       next: (res: any) => {
-        //this.notesList = res.data.map((note: {title: string, description:string, _id:string}) => ({title:note.title, description:note.description, _id:note._id}))
         this.notesList = res.data.filter((note: any) => note.isArchive === false && note.isTrash === false)
       },
       error: (err) => {
@@ -33,12 +32,17 @@ export class NotesContainerComponent implements OnInit {
   }
  
   handleUpdateList($event: any){
-    let {title, description, _id, action} = $event
+    let {title, description, _id, action, color} = $event
     if(action === 'add'){
       this.notesList.push({title, description})
+      console.log(action)
     }
-    else if(action === 'trash' || 'archive'){
+    else if(action === 'trash' || action === 'archive'){
       this.notesList = this.notesList.filter((element) => element._id != _id)
+    }
+    else if(action === 'color'){
+      const index = this.notesList.findIndex((note) => note._id === _id);
+      this.notesList[index].color = color
     }
     
   }

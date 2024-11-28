@@ -4,19 +4,24 @@
     flex-direction: column;
     height: auto;
     width: 230px;
-    border: solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
     align-items: center;
     padding: 10px 10px 5px 10px;
+    transition: background-color 1s ease;
+}
 
+.notecard:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .buttons{
-    visibility: hidden;
+    opacity: 0;
+    transition: opacity .45s ease
 }
 
 .notecard:hover .buttons{
-    visibility: visible;
+    opacity: 1;
 }
 
 .notecard span{

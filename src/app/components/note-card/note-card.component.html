@@ -1,4 +1,4 @@
-<div class="notecard">
+<div class="notecard" [style.background-color]="noteDetails.color">
     <div class="content" (click)="editNotesDialog(noteDetails)">
         <span class="text" style="font-weight: 500;">{{noteDetails.title}}</span>
         <span class="text" >{{noteDetails.description}}</span>
