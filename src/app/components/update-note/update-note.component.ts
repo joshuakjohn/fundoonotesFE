@@ -18,15 +18,14 @@ export class UpdateNoteComponent{
     public dialogRef: MatDialogRef<UpdateNoteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-    console.log(data)
     this.title = data.title
     this.description = data.description
   }
 
   onNoClick(): void {
-    this.dialogRef.close({title: this.title, description: this.description});
+    this.dialogRef.close({title: this.title, description: this.description, color: this.data.color});
     const header = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
-    this.httpService.putApiCall(`/api/v1/notes/${this.data._id}`, {title:this.title, description:this.description}, header).subscribe({
+    this.httpService.putApiCall(`/api/v1/notes/${this.data._id}`, {title:this.title, description:this.description, color:this.data.color}, header).subscribe({
       next: (res: any) => {
 
       },

@@ -35,7 +35,9 @@ export class NoteCardComponent {
   }
 
   handleNoteIconsClick($event: any){
-    this.updateList.emit({_id: $event._id, color:$event.color, action: $event.action})
+    this.noteDetails.color = $event.color
+    if($event.action)
+      this.updateList.emit({_id: $event._id, action: $event.action})
   }
 
   editNotesDialog(note: any){

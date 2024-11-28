@@ -66,11 +66,10 @@ export class IconsComponent {
   }
 
   handleNoteColor(color: string){
-    this.updateList.emit({_id: this.id, color, action: "color"})
     const header = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
     this.httpService.putApiCall(`/api/v1/notes/${this.id}`, {color}, header).subscribe({
-      next: (res: any) => {
-
+      next: (res: any) => {    
+        this.updateList.emit({color})
       },
       error: (err) => {
         console.log(err)

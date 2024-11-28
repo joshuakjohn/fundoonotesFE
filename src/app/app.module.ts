@@ -9,6 +9,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -55,7 +56,8 @@ import { IconsComponent } from './components/icons/icons.component';
     MatIconModule,
     MatDialogModule,
     MatButtonToggleModule,
-    MatMenuModule
+    MatMenuModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
