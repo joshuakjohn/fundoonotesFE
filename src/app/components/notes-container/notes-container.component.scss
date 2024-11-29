@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(241px, 1fr));
     gap: 16px;
-    padding: 16px;
+    padding: 30px;
 }
 
 .addnote{
@@ -11,5 +11,5 @@
 }
 
 .notescontainer{
-    margin: 40px 80px;
+    margin: 30px 80px;
 }

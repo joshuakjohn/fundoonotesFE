@@ -1,42 +1,57 @@
 .tknote{
     display: flex;
-    height: 50px;
-    width: 30%;
-    border-radius: 10px;
+    height: 45px;
+    width:600px;
+    border-radius: 7px;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-span{
-    margin: 20px;
-}
-
 .input{
-    background-color: white;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
     align-items: center;
+    background-color: white;
     height: 130px;
-    width: 35%;
+    width: 600px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 input{
-    margin: 10px 20px 0px 20px;
     width: 95%;
     box-sizing: border-box;
     border: 0px;
+    outline: none;
 }
 
 .buttons{
-    margin: 10px 0px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 #title{
     font-size: large;
 }
 
+#note{
+    font-size: 15px;
+}
 
+.tknote input{
+    outline: none;
+    margin: 0px 15px;
+    height: 45px;
+    font-size: 17px;
+    background-color: #fafafa;
+}
 
+.inside_input{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 600px;
+    height: 130px;
+    margin: 10px 0px;
+}
