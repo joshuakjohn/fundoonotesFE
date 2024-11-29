@@ -18,7 +18,7 @@ export class ArchiveContainerComponent {
     const header = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
     this.httpService.getApiCall('/api/v1/notes', header).subscribe({
       next: (res: any) => {
-        this.archiveList = res.data.filter((note: any) => note.isArchive === true)
+        this.archiveList = res.data.filter((note: any) => note.isArchive === true && note.isTrash === false)
       },
       error: (err) => {
         console.log(err)
@@ -29,7 +29,7 @@ export class ArchiveContainerComponent {
 
   handleUpdateList($event: any){
     let {_id, action} = $event
-    if(action === 'archive'){
+    if(action === 'archive' || action === 'trash'){
       this.archiveList = this.archiveList.filter((element) => element._id != _id)
     }
   }

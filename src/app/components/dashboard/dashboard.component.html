@@ -7,7 +7,7 @@
         <span style="font-size: large; padding: 0 10px;">Fundoo Notes</span>
         <input class="search" type="text" placeholder="Search" (keyup)="search($event)">
     </div>
-    <mat-drawer-container class="example-container" [hasBackdrop]="true">
+    <mat-drawer-container class="drawer-container" [hasBackdrop]="true">
         <mat-drawer class="drawer" #drawer [mode]="'over'" [opened]="drawerState">
             <mat-button-toggle-group class="buttons" name="fontStyle" aria-label="Font Style">
                 <mat-button-toggle checked (click)="navigateTo('notes')">
