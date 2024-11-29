@@ -26,6 +26,7 @@ import { NoteCardComponent } from './components/note-card/note-card.component';
 import { AddNoteComponent } from './components/add-note/add-note.component';
 import { UpdateNoteComponent } from './components/update-note/update-note.component';
 import { IconsComponent } from './components/icons/icons.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { IconsComponent } from './components/icons/icons.component';
     NoteCardComponent,
     AddNoteComponent,
     UpdateNoteComponent,
-    IconsComponent
+    IconsComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
