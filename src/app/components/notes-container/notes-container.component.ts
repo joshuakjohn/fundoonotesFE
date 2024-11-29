@@ -1,5 +1,6 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/dataService/data.service';
 import { HttpService } from 'src/app/services/http-service/http.service';
 
 
@@ -10,9 +11,10 @@ import { HttpService } from 'src/app/services/http-service/http.service';
 })
 export class NotesContainerComponent implements OnInit {
 
-  notesList: any[] = []
+  notesList: any[] = [];
+  filterNote: any;
 
-  constructor(private httpService: HttpService){
+  constructor(private httpService: HttpService, private data: DataService){
 
   }
 
@@ -27,7 +29,11 @@ export class NotesContainerComponent implements OnInit {
         console.log(err)
       }
     })
-    
+
+    this.data.incomingData.subscribe((response) => {
+      console.log("Search in process", response);
+      this.filterNote = response;
+    })
 
   }
  
