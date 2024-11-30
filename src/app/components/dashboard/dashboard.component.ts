@@ -18,8 +18,11 @@ export class DashboardComponent {
     iconRegistry.addSvgIconLiteral('menu-icon', sanitizer.bypassSecurityTrustHtml(MENU_ICON));
   }
 
-  handleDrawerClick(){
-    this.drawerState = !this.drawerState
+  handleDrawerClick(click?: string){
+    if(click === 'menu')
+      this.drawerState = !this.drawerState
+    else if(this.drawerState === true)
+      this.drawerState = false
   }
 
   navigateTo(route:string){
