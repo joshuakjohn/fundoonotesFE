@@ -32,22 +32,18 @@ export class AddNoteComponent {
   addNoteToggle(action: string){
     let title = this.title
     let description = this.description
-    let _id;
     const header = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
     let color = 'no color'
     this.addnote = !this.addnote
     if(action==='save' && (title && description)){
       this.httpService.postApiCall('/api/v1/notes', {title, description, color}, header).subscribe({
         next: (res: any) => {
-          _id = res.data._id
-          console.log(res)
+          this.updateList.emit({data: res.data, action: 'add'})
         },
         error: (err) => {
           console.log(err)
         }
       })
-      console.log(this.title, this.description)
-      this.updateList.emit({title: this.title, description:this.description, _id:_id, action: 'add'})
     }
     this.title = ''
     this.description = ''

@@ -32,6 +32,7 @@ export class NoteCardComponent {
   }
 
   ngOnInit(){
+    console.log(this.noteDetails)
   }
 
   handleNoteIconsClick($event: any){
