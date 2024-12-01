@@ -1,5 +1,16 @@
 <div class='tknote' *ngIf="addnote else expandedNote"  >
     <input type="text" placeholder="Take a note" (click)="addNoteToggle('toggle')">
+    <div class="tkbuttons">
+        <button mat-icon-button aria-label="collabrator button" matTooltip="Collabrator" class="small-icon-button">
+            <mat-icon svgIcon="tick-icon"></mat-icon>
+        </button>
+        <button mat-icon-button aria-label="collabrator button" matTooltip="Collabrator" class="small-icon-button">
+            <mat-icon svgIcon="brush-icon"></mat-icon>
+        </button>
+        <button mat-icon-button aria-label="collabrator button" matTooltip="Collabrator" class="small-icon-button">
+            <mat-icon style="transform: scale(.9);" svgIcon="img-icon"></mat-icon>
+        </button>
+    </div>
 </div>
 <ng-template #expandedNote>
 <div class="input">
