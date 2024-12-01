@@ -11,15 +11,37 @@
   }
 
 .search{
-  width: 500px;
-  height: 50px;
-  margin-left: 75px;
+  display: flex;
+  width: 700px;
+  margin-left: 50px;
   padding: 0px 10px;
   align-items: center;
-  border: none;
   border-radius: 10px;
   background-color: #f1f1f1;
-  outline: none;
+  gap: 5px;
+
+  .search_input{
+    height: 50px;
+    outline: none;
+    border: none;
+    background-color: #f1f1f1;
+    width: 500px;
+    font-size: medium;
+  }
+  
+  .search_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.search_button mat-icon{
+  position: absolute;
+  transform: scale(.8);
+
 }
 
 .menu{
@@ -58,4 +80,15 @@ mat-button-toggle{
 
 .toggle svg{
   padding: 0 10px;
+}
+
+.header_buttons{
+  display: flex;
+  margin-left: 120px;
+  gap: 30px;
+  .account{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 }
