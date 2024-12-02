@@ -14,7 +14,8 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class NoteCardComponent {
 
-  @Input() noteDetails:any = ''
+  @Input() noteDetails:any = '';
+  @Input() action: string = '';
 
   @Output() updateList = new EventEmitter
 

@@ -27,6 +27,7 @@ export class IconsComponent {
   ];
 
   @Input() id: string = ''
+  @Input() action: string = ''
 
   @Output() updateList = new EventEmitter
 

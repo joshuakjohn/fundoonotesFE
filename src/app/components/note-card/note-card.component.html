@@ -3,5 +3,5 @@
         <span class="text" style="font-weight: 500;">{{noteDetails.title}}</span>
         <span class="text" >{{noteDetails.description}}</span>
     </div>
-    <app-icons class="buttons" [id]="noteDetails._id" (updateList)="handleNoteIconsClick($event)"></app-icons>
+    <app-icons class="buttons" [id]="noteDetails._id" [action]="action" (updateList)="handleNoteIconsClick($event)"></app-icons>
 </div>
