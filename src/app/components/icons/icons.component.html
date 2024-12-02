@@ -1,5 +1,5 @@
 <div class="trash_buttons" *ngIf="action === 'trash'; else buttons">
-    <button mat-icon-button aria-label="trash button" matTooltip="Trash" class="small-icon-button">
+    <button mat-icon-button aria-label="trash button" matTooltip="Trash" class="small-icon-button" (click)="deleteNote('delete')">
         <mat-icon svgIcon="delete-forever-icon" aria-hidden="false" aria-label="trash icon"></mat-icon>
     </button>
     <button mat-icon-button aria-label="collabrator button" matTooltip="Collabrator" class="small-icon-button" (click)="trashNote('trash')">

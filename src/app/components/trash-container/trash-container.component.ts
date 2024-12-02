@@ -30,7 +30,7 @@ export class TrashContainerComponent {
 
   handleUpdateList($event: any){
     let {_id, action} = $event
-    if(action === 'trash'){
+    if(action === 'trash' || action === 'delete'){
       this.trashList = this.trashList.filter((element) => element._id != _id)
     }
   }
