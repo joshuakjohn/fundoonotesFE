@@ -30,6 +30,9 @@ export class LoginComponent {
           next: (res) => {
             console.log(res)
             localStorage.setItem("token", res.token)
+            localStorage.setItem("email", email)
+            localStorage.setItem('fname', res.fname)
+            localStorage.setItem('lname', res.lname)
             this.router.navigate(['/dashboard/notes'])
           },
           error: (err) => {
@@ -43,4 +46,6 @@ export class LoginComponent {
 interface login{
   message: string;
   token: string;
+  fname: string,
+  lname: string
 }
