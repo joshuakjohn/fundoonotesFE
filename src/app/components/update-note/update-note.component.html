@@ -1,20 +1,11 @@
-<div class="card">
-    <div class="card-content">
-        <input type="text" class="input-field" [(ngModel)]="title">
-        <input type="text" class="input-field" [(ngModel)]="description">
+<div class="card" [style.background-color]="color">
+    <div [style.background-color]="color" class="card-content">
+        <input [style.background-color]="color" type="text" class="input-field" [(ngModel)]="title">
+        <input [style.background-color]="color" type="text" class="input-field" [(ngModel)]="description">
     </div>
-    <div class="card-footer">
-        <div class="action-buttons">
-            <button class="btn">🔔</button>
-            <button class="btn">👥</button>
-            <button class="btn">🌐</button>
-            <button class="btn">🖼️</button>
-            <button class="btn">🎥</button>
-            <button class="btn">⋯</button>
-        </div>
+    <div [style.background-color]="color" class="card-footer">
+        <app-icons class="icons" [id]="id" (updateList)="handleButtons($event)"></app-icons>
         <div class="edit-buttons">
-            <button class="btn">↩️</button>
-            <button class="btn">↪️</button>
             <button class="btn close-btn" (click)="onNoClick()" [mat-dialog-close]="title">Close</button>
         </div>
     </div>

@@ -1,11 +1,11 @@
 .card {
-    background-color: white;
-    border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
+    transition: background-color 1s ease;
 }
 .card-content {
     padding: 20px;
+    transition: background-color 1s ease;
 }
 .input-field {
     width: 100%;
@@ -13,22 +13,19 @@
     outline: none;
     font-size: 16px;
     padding: 5px 0;
+    transition: background-color 1s ease;
+
 }
 .input-field:first-child {
     font-size: 24px;
 }
-.timestamp {
-    text-align: right;
-    color: #777;
-    font-size: 12px;
-    margin-top: 10px;
-}
+
 .card-footer {
-    border-top: 1px solid #eee;
-    padding: 10px 20px;
+    padding: 11px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: background-color 1s ease;
 }
 .action-buttons, .edit-buttons {
     display: flex;

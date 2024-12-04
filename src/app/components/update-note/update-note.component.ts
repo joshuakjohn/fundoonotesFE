@@ -1,5 +1,5 @@
 import { HttpHeaders } from '@angular/common/http';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, Output } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { HttpService } from '../../services/http-service/http.service';
 
@@ -10,8 +10,13 @@ import { HttpService } from '../../services/http-service/http.service';
 })
 export class UpdateNoteComponent{
 
-  title: any = '';
+  @Output() updateList = new EventEmitter
+
+  title: any = ''
   description: any = ''
+  color: any = ''
+  id: any = ''
+  action: any = ''
 
   constructor(
     public httpService:HttpService,
@@ -20,12 +25,17 @@ export class UpdateNoteComponent{
   ) {
     this.title = data.title
     this.description = data.description
+    this.color = data.color
+    this.id = data._id
   }
 
   onNoClick(): void {
-    this.dialogRef.close({title: this.title, description: this.description, color: this.data.color});
+    this.data.title = this.title;
+    this.data.description = this.description;
+    this.data.color = this.color
+    this.dialogRef.close({data: this.data, action: this.action});
     const header = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
-    this.httpService.putApiCall(`/api/v1/notes/${this.data._id}`, {title:this.title, description:this.description, color:this.data.color}, header).subscribe({
+    this.httpService.putApiCall(`/api/v1/notes/${this.data._id}`, {title:this.title, description:this.description, color:this.color}, header).subscribe({
       next: (res: any) => {
 
       },
@@ -33,6 +43,13 @@ export class UpdateNoteComponent{
         console.log(err)
       }
     })
+  }
+
+  handleButtons($event: any){
+    this.color = $event.color
+    this.action = $event.action
+    if(this.action === 'archive' || this.action === 'trash')
+    this.onNoClick()
   }
 
 }

@@ -51,7 +51,9 @@ export class NoteCardComponent {
   );
 
     dialogRef.afterClosed().subscribe(result => {
-      this.noteDetails = {...result, _id: this.noteDetails._id}
+      this.noteDetails = result.data
+      this.handleNoteIconsClick({_id: this.noteDetails._id, color:this.noteDetails.color, action: result.action})
+      console.log(result)
       console.log('The dialog was closed');
     });
   }
