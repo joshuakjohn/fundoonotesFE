@@ -15,6 +15,7 @@ export class DashboardComponent {
   email: any = localStorage.getItem('email')
   username: any = localStorage.getItem('fname')
   drawerState: boolean = false
+  currentRoute: string = ''
   
   constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer, public router: Router, private data: DataService) {
     iconRegistry.addSvgIconLiteral('menu-icon', sanitizer.bypassSecurityTrustHtml(MENU_ICON));
@@ -25,6 +26,13 @@ export class DashboardComponent {
     iconRegistry.addSvgIconLiteral('search-icon', sanitizer.bypassSecurityTrustHtml(SEARCH_ICON));
     iconRegistry.addSvgIconLiteral('profile-icon', sanitizer.bypassSecurityTrustHtml(PROFILE_ICON))
 
+  }
+
+  ngOnInit(){
+    this.router.events.subscribe(() => {
+      this.currentRoute = this.router.url;
+      console.log(this.currentRoute)
+    });
   }
 
   handleDrawerClick(click?: string){
