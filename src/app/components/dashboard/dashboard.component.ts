@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { DataService } from 'src/app/services/dataService/data.service';
 import { MENU_ICON, REFRESH_ICON, LIST_VIEW_ICON, SETTING_ICON, OTHER_MENU_ICON, SEARCH_ICON, PROFILE_ICON, ARCHIVE2_ICON, TRASH2_ICON, BULB_ICON } from 'src/assets/svg-icons';
 
@@ -10,12 +11,13 @@ import { MENU_ICON, REFRESH_ICON, LIST_VIEW_ICON, SETTING_ICON, OTHER_MENU_ICON,
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit, OnDestroy{
 
   email: any = localStorage.getItem('email')
   username: any = localStorage.getItem('fname')
   drawerState: boolean = false
   currentRoute: string = ''
+  subscription!: Subscription
   
   constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer, public router: Router, private data: DataService) {
     iconRegistry.addSvgIconLiteral('menu-icon', sanitizer.bypassSecurityTrustHtml(MENU_ICON));
@@ -35,7 +37,7 @@ export class DashboardComponent {
   }
 
   ngOnInit(){
-    this.router.events.subscribe(() => {
+    this.subscription = this.router.events.subscribe(() => {
       this.currentRoute = this.router.url;
       console.log(this.currentRoute)
     });
@@ -60,5 +62,9 @@ export class DashboardComponent {
   logout(){
     localStorage.clear()
     this.router.navigate([''])
+  }
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe()
   }
 }
