@@ -41,6 +41,9 @@
             </div>
         </div>        
     </div>
+
+    
+
     <mat-drawer-container class="drawer-container" [hasBackdrop]="true" (click)="handleDrawerClick()">
         <mat-drawer class="drawer" #drawer [mode]="'over'" [opened]="drawerState">
             <mat-button-toggle-group class="buttons" name="fontStyle" aria-label="Font Style">
@@ -65,8 +68,21 @@
             </mat-button-toggle-group> 
         </mat-drawer>
         
-    <mat-drawer-content>
-            <router-outlet></router-outlet>
+    <mat-drawer-content class="content">
+            <div class="sidebar">
+                <button mat-icon-button aria-label="trash button" matTooltip="Trash" class="sidebar_icons">
+                    <mat-icon svgIcon="bulb-icon" aria-hidden="false" aria-label="trash icon"></mat-icon>
+                </button>
+                <button mat-icon-button aria-label="trash button" matTooltip="Trash" class="sidebar_icons">
+                    <mat-icon svgIcon="archive2-icon" aria-hidden="false" aria-label="trash icon"></mat-icon>
+                </button>
+                <button mat-icon-button aria-label="trash button" matTooltip="Trash" class="sidebar_icons">
+                    <mat-icon svgIcon="trash2-icon" aria-hidden="false" aria-label="trash icon"></mat-icon>
+                </button>
+            </div>
+            <div class="notes">
+                <router-outlet></router-outlet>
+            </div>
         </mat-drawer-content>
     </mat-drawer-container>
 </div>

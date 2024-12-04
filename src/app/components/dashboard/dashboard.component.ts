@@ -3,7 +3,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/dataService/data.service';
-import { MENU_ICON, REFRESH_ICON, LIST_VIEW_ICON, SETTING_ICON, OTHER_MENU_ICON, SEARCH_ICON, PROFILE_ICON } from 'src/assets/svg-icons';
+import { MENU_ICON, REFRESH_ICON, LIST_VIEW_ICON, SETTING_ICON, OTHER_MENU_ICON, SEARCH_ICON, PROFILE_ICON, ARCHIVE2_ICON, TRASH2_ICON, BULB_ICON } from 'src/assets/svg-icons';
 
 @Component({
   selector: 'app-dashboard',
@@ -24,7 +24,13 @@ export class DashboardComponent {
     iconRegistry.addSvgIconLiteral('settings-icon', sanitizer.bypassSecurityTrustHtml(SETTING_ICON));
     iconRegistry.addSvgIconLiteral('other-menu-icon', sanitizer.bypassSecurityTrustHtml(OTHER_MENU_ICON));
     iconRegistry.addSvgIconLiteral('search-icon', sanitizer.bypassSecurityTrustHtml(SEARCH_ICON));
-    iconRegistry.addSvgIconLiteral('profile-icon', sanitizer.bypassSecurityTrustHtml(PROFILE_ICON))
+    iconRegistry.addSvgIconLiteral('profile-icon', sanitizer.bypassSecurityTrustHtml(PROFILE_ICON));
+    iconRegistry.addSvgIconLiteral('archive2-icon', sanitizer.bypassSecurityTrustHtml(ARCHIVE2_ICON));
+    iconRegistry.addSvgIconLiteral('trash2-icon', sanitizer.bypassSecurityTrustHtml(TRASH2_ICON));
+    iconRegistry.addSvgIconLiteral('bulb-icon', sanitizer.bypassSecurityTrustHtml(BULB_ICON))
+
+
+
 
   }
 
