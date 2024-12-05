@@ -27,6 +27,7 @@ import { AddNoteComponent } from './components/add-note/add-note.component';
 import { UpdateNoteComponent } from './components/update-note/update-note.component';
 import { IconsComponent } from './components/icons/icons.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { EditLabelComponent } from './components/edit-label/edit-label.component'
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     AddNoteComponent,
     UpdateNoteComponent,
     IconsComponent,
-    FilterPipe
+    FilterPipe,
+    EditLabelComponent
   ],
   imports: [
     BrowserModule,
