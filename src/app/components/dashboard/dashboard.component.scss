@@ -60,11 +60,44 @@
   display: flex;
   flex-direction: column;
   border: 1px solid transparent;
+
 }
 
-mat-button-toggle{
+.outer_buttons{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid transparent;
+  width: 60px;
+  top: 10px;
+  height: calc(100vh - 77px);
+  transition: width .08s ease;
+}
+
+.outer_buttons:hover{
+  width: 250px;
+  padding-left: 0px;
+
+  .in_outer_button{
+    border-radius: 0px 25px 25px 0px;
+    padding: 3px 1.5px;
+  }
+}
+
+
+.in_outer_button{
+  border-radius: 50%;
+  padding: 3px 1.5px;
+  background-color: #fafafa;
+  border: none !important; 
+
+}
+
+
+.drawer_button{
   border-radius: 0px 25px 25px 0px;
   padding: 3px;
+  background-color: #fafafa;
+
 }
 
 .toggle{
@@ -79,7 +112,7 @@ mat-button-toggle{
 }
 
 .toggle svg{
-  padding: 0 10px;
+  padding: 0px 2px;
 }
 
 .header_buttons{
@@ -119,4 +152,8 @@ mat-button-toggle{
 
 .notes{
   width: 100%;
+}
+
+::ng-deep .mat-button-toggle-checked {
+  background-color: rgb(254, 239, 195) !important;
 }
