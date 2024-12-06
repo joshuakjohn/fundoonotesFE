@@ -68,25 +68,27 @@
   flex-direction: column;
   border: 1px solid transparent;
   width: 60px;
-  top: 10px;
+  padding-top: 10px;
   height: calc(100vh - 77px);
-  transition: width .08s ease;
+  padding-left: 10px;
+  transition: padding-left 0s ease, width .08s ease;
 }
 
 .outer_buttons:hover{
-  width: 250px;
+  width: 300px;
   padding-left: 0px;
+  padding-right: 10px;
 
   .in_outer_button{
     border-radius: 0px 25px 25px 0px;
-    padding: 3px 1.5px;
+    padding: 3px 13px;
   }
 }
 
 
 .in_outer_button{
   border-radius: 50%;
-  padding: 3px 1.5px;
+  padding: 3px 3px;
   background-color: #fafafa;
   border: none !important; 
 
