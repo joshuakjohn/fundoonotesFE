@@ -10,6 +10,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -61,7 +63,8 @@ import { EditLabelComponent } from './components/edit-label/edit-label.component
     MatDialogModule,
     MatButtonToggleModule,
     MatMenuModule,
-    MatGridListModule
+    MatGridListModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

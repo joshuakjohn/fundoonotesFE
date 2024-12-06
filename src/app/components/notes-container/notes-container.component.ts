@@ -13,6 +13,7 @@ export class NotesContainerComponent implements OnInit {
 
   notesList: any[] = [];
   filterNote: any;
+  loader:string = 'flex' 
 
   constructor(private httpService: HttpService, private data: DataService){
 
@@ -24,6 +25,7 @@ export class NotesContainerComponent implements OnInit {
     this.httpService.getApiCall('/api/v1/notes', header).subscribe({
       next: (res: any) => {
         this.notesList = res.data.filter((note: any) => note.isArchive === false && note.isTrash === false)
+        this.loader = 'none'
       },
       error: (err) => {
         console.log(err)
