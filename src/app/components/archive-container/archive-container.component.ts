@@ -10,6 +10,7 @@ import { HttpService } from 'src/app/services/http-service/http.service';
 export class ArchiveContainerComponent {
 
   archiveList: any[] = []; 
+  loader:string = 'flex'
 
   constructor(public httpService: HttpService){}
 
@@ -19,6 +20,7 @@ export class ArchiveContainerComponent {
     this.httpService.getApiCall('/api/v1/notes', header).subscribe({
       next: (res: any) => {
         this.archiveList = res.data.filter((note: any) => note.isArchive === true && note.isTrash === false)
+        this.loader = 'none'
       },
       error: (err) => {
         console.log(err)

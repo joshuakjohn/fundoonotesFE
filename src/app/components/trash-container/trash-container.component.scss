@@ -13,3 +13,20 @@
 .notescontainer{
     margin: 40px 40px;
 }
+
+.spinner{
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    margin: 30px 40px;
+}
+
+.no_note{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    margin: 30px 40px;
+    font-size: large;
+    color: rgb(152, 152, 152);
+}

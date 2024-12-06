@@ -10,6 +10,8 @@ import { HttpService } from 'src/app/services/http-service/http.service';
 export class TrashContainerComponent {
 
   trashList: any[] = []
+  loader:string = 'flex' 
+
 
   constructor(public httpService: HttpService){}
 
@@ -19,6 +21,7 @@ export class TrashContainerComponent {
     this.httpService.getApiCall('/api/v1/notes', header).subscribe({
       next: (res: any) => {
         this.trashList = res.data.filter((note: any) => note.isTrash === true)
+        this.loader = 'none'
       },
       error: (err) => {
         console.log(err)
