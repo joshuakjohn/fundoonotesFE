@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit, OnDestroy{
   subscription!: Subscription
   labels: string[] = []
   
-  constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer, public router: Router, private data: DataService, public dialog: MatDialog) {
+  constructor(public iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer, public router: Router, public data: DataService, public dialog: MatDialog) {
     iconRegistry.addSvgIconLiteral('menu-icon', sanitizer.bypassSecurityTrustHtml(MENU_ICON));
     iconRegistry.addSvgIconLiteral('refresh-icon', sanitizer.bypassSecurityTrustHtml(REFRESH_ICON));
     iconRegistry.addSvgIconLiteral('list-icon', sanitizer.bypassSecurityTrustHtml(LIST_VIEW_ICON));
